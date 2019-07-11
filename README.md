@@ -1,6 +1,6 @@
 # Bootstrap Website Base
 
-> Custom base structure for websites with reusable parts of source code or functions mainly based on **Bootstrap** + **PHP** and another libraries.
+> Custom base structure for websites mainly based on **Bootstrap**, **PHP** and **jQuery** wich comes with useful plugins, functions and snippets.
 
 [![bootstrap](https://img.shields.io/badge/Bootstrap-4.3.1-blueviolet.svg)](https://getbootstrap.com)
 [![wordpress](https://img.shields.io/badge/WordPress-5.5.2-blue.svg)](https://wordpress.org)
@@ -23,7 +23,7 @@ This repository is under restructuring, im planning to improve the usability of 
   - Work in local & production enviroments
 
 # Outdated Repositories
-Bootstrap | Wordpress | Link
+Bootstrap | WordPress | Link
 :-----: | :-----: | :-----:
 4.2.1 | 5.0.3 | [View](https://github.com/TriForceX/WebsiteBase/tree/bs-4.2.1-outdated)
 3.3.7 | 4.9.6 | [View](https://github.com/TriForceX/WebsiteBase/tree/bs-3.3.7-outdated)
