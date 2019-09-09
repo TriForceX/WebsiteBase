@@ -3,7 +3,7 @@
 <main>
 	<!-- Main Container  -->
 	<div class="container">
-		Main Content
+		Main Content <?php echo $cause_error; ?>
 	</div>
 	<!-- Main Container (End) -->
 </main>
