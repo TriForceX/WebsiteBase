@@ -40,8 +40,9 @@ class WebsiteBase
 		}
 		elseif($enable == 2)
 		{
-			ob_start(function($output = null){
+			ob_start(function(){
 				$error = error_get_last();
+				$output = null;
 				foreach ($error as $info => $string) $output .= '<tr><td>'.$info.'</td><td>'.$string.'</td>';
 				return '<table border="1">'.$output.'</table>';
 			});
@@ -63,7 +64,7 @@ if(class_exists('WP'))
 }
 
 // Set TimeZone
-// date_default_timezone_set(// );
+// date_default_timezone_set('America/New_York');
 
 // Set debug
 // $base->debug();
