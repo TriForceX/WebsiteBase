@@ -3,7 +3,7 @@
 /*
  * Website Base Setup
  * ------
- * Main project configuration
+ * Main configuration
  * More info at https://github.com/TriForceX/WebsiteBase/wiki
  * 
  */
@@ -12,8 +12,8 @@
 require_once('resources/websitebase/core.php');
 
 // Set main Website Base configuration
-$base->set([
-	'debug'				=> 2,
+$base = new WebsiteBase([
+	'debug'				=> false,
 	'lang' 				=> 'en-US',
 	'charset' 			=> 'UTF-8',
 	'title' 			=> 'Website Base',
@@ -27,7 +27,7 @@ $base->set([
 	'timezone' 			=> 'America/New_York',
 	'local_dir'			=> dirname(__FILE__),
 	'custom_main_url'	=> false,
-	'assets_url'		=> '',
+	'assets_url'		=> false,
 	'rebuild_pass'		=> 'mypassword',
 	'minify'			=> true,
 	'mix'				=> true,
@@ -36,10 +36,3 @@ $base->set([
 	'js_file'			=> ['js/extras/example.js'],
 	'js_vars'			=> ['$color-custom'	=> '#FF0000'],
 ]);
-
-$base->set(['another' => '12345']);
-
-echo 'Variable 1: '.$base->get('test');
-echo '<br>Variable 2: '.$base->get('timezone');
-echo '<br>Variable 3: '.$base->get('another');
-echo '<hr>';

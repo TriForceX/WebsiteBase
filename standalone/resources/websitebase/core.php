@@ -3,27 +3,43 @@
 /*
  * Website Base Class
  * ------
- * Main class functions
+ * Main custom functions
  * More info at https://github.com/TriForceX/WebsiteBase/wiki
  * 
  */
 
 class WebsiteBase
 {
-	// Set main variable
-	public $config = ['test' => 'ABC'];
-	
 	// Constructor 
-	public function __construct()
+	public function __construct($config)
 	{
-		echo 'The class '.__CLASS__.' was initiated!<br>'; 
+		// Set global config
+		$this->config = $config;
+		
+		// Check WordPress install
+		if(class_exists('WP'))
+		{
+			// Get custom WordPress functions
+			require_once('wordpress.php');
+
+			// Class initialization
+			$this->wp = new WebsiteBaseWP($this->config);
+		}
+		
+		// Set debug
+		$this->debug($this->config['debug']);
+		
+		// Set TimeZone
+		date_default_timezone_set($this->config['timezone']);
 	}
 	
+	// Set config
 	function set($data) 
 	{
 		foreach($data as $key => $value) $this->config[$key] = $value;
 	}
 
+	// Get config
 	function get($key) 
 	{
 		return $this->config[$key];
@@ -32,13 +48,11 @@ class WebsiteBase
 	// Error handle
 	public static function debug($enable = 0)
     {
-		if($enable == 1)
-		{
-			ini_set('display_errors', 1);
-			ini_set('display_startup_errors', 1);
-			error_reporting(E_ALL);
-		}
-		elseif($enable == 2)
+		ini_set('display_errors', $enable ? 1 : 0);
+		ini_set('display_startup_errors', $enable ? 1 : 0);
+		error_reporting($enable ? E_ALL : 0);
+		
+		if($enable == 2)
 		{
 			ob_start(function(){
 				$error = error_get_last();
@@ -49,22 +63,3 @@ class WebsiteBase
 		}
 	}
 }
-
-// Class initialization
-$base = new WebsiteBase();
-
-// Check WordPress install
-if(class_exists('WP'))
-{
-	// Get custom WordPress functions
-	require_once('wordpress.php');
-	
-	// Class initialization
-	$base = new WebsiteBaseWP();
-}
-
-// Set TimeZone
-// date_default_timezone_set('America/New_York');
-
-// Set debug
-// $base->debug();

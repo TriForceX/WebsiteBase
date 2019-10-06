@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Website Base WordPress
+ * Website Base WordPress Class
  * ------
  * Main custom WordPress functions
  * More info at https://github.com/TriForceX/WebsiteBase/wiki
@@ -12,8 +12,9 @@
 class WebsiteBaseWP extends WebsiteBase
 { 
 	// Constructor 
-	public function __construct()
+	public function __construct($config)
 	{
-		echo 'The class '.__CLASS__.' was initiated!<br>'; 
+		// Set global config
+		$this->config = $config;
 	}
 }
