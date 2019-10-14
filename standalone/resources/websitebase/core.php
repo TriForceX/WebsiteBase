@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Website Base Class
+ * Website Base Main Class
  * ------
  * Main custom functions
  * More info at https://github.com/TriForceX/WebsiteBase/wiki
@@ -46,7 +46,7 @@ class WebsiteBase
 	}
 	
 	// Error handle
-	public static function debug($enable = 0)
+	public function debug($enable = 0)
     {
 		ini_set('display_errors', $enable ? 1 : 0);
 		ini_set('display_startup_errors', $enable ? 1 : 0);

@@ -1,24 +1,24 @@
 <?php include('functions.php'); ?>
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="<?php echo $base->get('lang'); ?>">
 <head>
 	<!-- Main title -->
-	<title>Website Base</title>
+	<title><?php echo $base->get('title'); ?></title>
 	<!-- HTML Charset -->
-	<meta charset="UTF-8">
+	<meta charset="<?php echo $base->get('charset'); ?>">
 	<!-- Mobile Enable -->
-	<meta name="mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="X-UA-Compatible" content="<?php echo $base->get('ua-compatible'); ?>">
+	<meta name="mobile-web-app-capable" content="<?php echo $base->get('mobile-capable'); ?>">
+	<meta name="apple-mobile-web-app-capable" content="<?php echo $base->get('mobile-capable'); ?>">
+	<meta name="viewport" content="<?php echo $base->get('viewport'); ?>">
 	<!-- Nav Bar Mobile Color -->
-	<meta name="theme-color" content="#7840a2">
-	<meta name="msapplication-navbutton-color" content="#7840a2">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="theme-color" content="<?php echo $base->get('nav-color'); ?>">
+	<meta name="msapplication-navbutton-color" content="<?php echo $base->get('nav-color'); ?>">
+	<meta name="apple-mobile-web-app-status-bar-style" content="<?php echo $base->get('nav-color-apple'); ?>">
 	<!-- Meta Details -->
-	<meta name="description" content="Custom base structure for websites mainly based on Bootstrap & PHP with useful plugins, functions and snippets.">
-	<meta name="keywords" content="html, jquery, javascript, php, responsive, css3, bootstrap, css, wordpress, bootstrap4">
-	<meta name="author" content="TriForce">
+	<meta name="description" content="<?php echo $base->get('description'); ?>">
+	<meta name="keywords" content="<?php echo $base->get('keywords'); ?>">
+	<meta name="author" content="<?php echo $base->get('author'); ?>">
 	<!-- Scripts & Stylesheets -->
 	<link href="css/something-1.css" rel="stylesheet">
 	<link href="css/something-2.css" rel="stylesheet">

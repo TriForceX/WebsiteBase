@@ -8,7 +8,6 @@
  * 
  */
 
-// Enable main PHP utilities
 class WebsiteBaseWP extends WebsiteBase
 { 
 	// Constructor 

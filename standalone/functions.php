@@ -8,12 +8,15 @@
  * 
  */
 
-// Get the main PHP utilities
+// Get the main classes
 require_once('resources/websitebase/core.php');
 
-// Set main Website Base configuration
+// Set main configuration
 $base = new WebsiteBase([
+	// Internal
 	'debug'				=> false,
+	'timezone' 			=> 'America/New_York',
+	// Meta tags
 	'lang' 				=> 'en-US',
 	'charset' 			=> 'UTF-8',
 	'title' 			=> 'Website Base',
@@ -22,15 +25,15 @@ $base = new WebsiteBase([
 	'author' 			=> 'TriForce',
 	'mobile-capable' 	=> 'yes',
 	'viewport' 			=> 'width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no',
+	'ua-compatible'		=> 'IE=edge',
 	'nav-color' 		=> '#7840a2',
 	'nav-color-apple' 	=> 'black',
-	'timezone' 			=> 'America/New_York',
-	'local_dir'			=> dirname(__FILE__),
-	'custom_main_url'	=> false,
-	'assets_url'		=> false,
-	'rebuild_pass'		=> 'mypassword',
+	// Assets
+	'assets_path'		=> dirname(__FILE__),
+	'custom_url'		=> false,
 	'minify'			=> true,
-	'mix'				=> true,
+	'compile_pass'		=> 'mypassword',
+	// Custom vars
 	'css_file'			=> ['css/extras/example.css'],
 	'css_vars'			=> ['$color-custom'	=> '#FF0000'],
 	'js_file'			=> ['js/extras/example.js'],
