@@ -15,20 +15,16 @@ class WebsiteBase
 	{
 		// Set global config
 		$this->config = $config;
-		
 		// Check WordPress install
 		if(class_exists('WP'))
 		{
 			// Get custom WordPress functions
 			require_once('wordpress.php');
-
 			// Class initialization
 			$this->wp = new WebsiteBaseWP($this->config);
 		}
-		
 		// Set debug
 		$this->debug($this->config['debug']);
-		
 		// Set TimeZone
 		date_default_timezone_set($this->config['timezone']);
 	}
@@ -48,10 +44,11 @@ class WebsiteBase
 	// Error handle
 	public function debug($enable = false)
     {
+		// Warnings
 		ini_set('display_errors', $enable ? 1 : 0);
 		ini_set('display_startup_errors', $enable ? 1 : 0);
 		error_reporting($enable ? E_ALL : 0);
-		
+		// Handle
 		if($enable == 2)
 		{
 			ob_start(function(){

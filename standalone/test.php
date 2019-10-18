@@ -5,11 +5,27 @@
 	<div class="container">
 		Main Content
 		<?php
+		class Custom extends WebsiteBase
+		{ 
+			// Constructor 
+			function __construct()
+			{
+			}
+			// Custom function
+			public function message($name)
+			{
+				return 'Hi <b>'.$name.'</b>, the language is <b>'.$this->config['lang'].'</b>';
+			}
+		}
+		
+		$custom = new Custom();
+		
 		$base->set(['custom' => '12345']);	
 		echo '<code>'; 
-		echo '<br>Variable from config: '.$base->get('timezone');	
-		echo '<br>Variable custom: '.$base->get('custom');	
-		echo '<br>Variable undefined:'.$cause_error;
+		echo '<br>Config variable: '.$base->get('timezone');	
+		echo '<br>Custom variable: '.$base->get('custom');	
+		echo '<br>Undefined variable: '.$cause_error;
+		echo '<br>Extended function: '.$custom->message('User');
 		echo '</code>'; 
 		?>
 	</div>
