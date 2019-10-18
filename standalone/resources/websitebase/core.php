@@ -46,7 +46,7 @@ class WebsiteBase
 	}
 	
 	// Error handle
-	public function debug($enable = 0)
+	public function debug($enable = false)
     {
 		ini_set('display_errors', $enable ? 1 : 0);
 		ini_set('display_startup_errors', $enable ? 1 : 0);
